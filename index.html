@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shannon Houchins</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a6d931c368.js"
+      crossorigin="anonymous">
+    </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+            publicKey: "vuqne6zv0ClzSecAl",
+            });
+        })();
+    </script>
+  </head>
+
+  <body>
+    <section id="landing_page" onmousemove="moveBackground(event)">
+      <nav>
+        <figure>
+          <img id="personal-logo" src="./assets/SH logo purple.png" alt="SH" />
+        </figure>
+        <ul class="nav__link--list">
+          <li class="nav__link click" onclick="toggleModal()">
+            <a href="#" class="
+            nav__link--anchor 
+            link__hover-effect 
+            link__hover-effect--black" >
+              About</a>
+          </li>
+          <li class="nav__link click">
+            <a href="#projects" class="
+            nav__link--anchor 
+            link__hover-effect 
+            link__hover-effect--black"  >
+              Projects</a >
+          </li>
+          <li class="nav__link click" onclick="toggleModal()">
+            <a href="#" class="
+            nav__link--anchor 
+            link__hover-effect 
+            link__hover-effect--black" >
+              Contact</a >
+          </li>
+          <li class="nav__link click" onclick="toggleContrast()">
+            <a href="#" class="
+            nav__link--anchor 
+            link__hover-effect 
+            link__hover-effect--black" >
+              <i class="fas fa-adjust"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <header class="header">
+        <div class="header__content">
+          <h1 class="title">Hey</h1>
+          <h1 class="title text__highlight">I'm Shannon</h1>
+          <p class="header__para">
+            I am a
+            <span class="text__highlight">Frontend Software Engineer</span>
+            width a strong passion for building web applications with a great
+            user experiences
+            <br />
+            Here is a little bit more
+            <span class="text__highlight click" onclick="toggleModal()">about me</span>
+          </p>
+          <div class="social__list">
+            <a
+              href="https://www.linkedin.com/in/shannon-houchins-7a006399/"
+              target="_blank"
+              class="social__link click" >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://github.com/shannonh1307"
+              target="_blank"
+              class="social__link click" >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="./assets/resume IT w volunteer.pdf"
+              target="_blank"
+              class="social__link click" >
+              <i class="fa-regular fa-file"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <button class="mail__btn click" onclick="toggleModal()">
+        <i class="fa-regular fa-envelope"></i>
+      </button>
+      <a href="#projects" class="scroll">
+          <div class="scroll_icon click">
+              <i class="fa-solid fa-angles-down scroll_icon:after"></i>
+            </div>
+        </a>
+        <!-- email modal -->
+         <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title">Here's a little bit about me:</h3>
+                <h4 class="modal__sub-title text__highlight">Frontend Software Engineer</h4>
+                <p class="modal__para">I am a 
+                    <span class="text__highlight">veteran</span> 
+                    of the U.S. Army, and have worked there as an MLT for over 20 years, 
+                    problem solving in high pressure situations. 
+                    <br>
+                    I have a passion for 
+                    <span class="text__highlight">service and volunteer work </span>with kids, 
+                    taking active roles with both 
+                    <span class="text__highlight">Scouting America</span> and 
+                    <span class="text__highlight">Guardians of the Children.</span>
+                    <br>
+                    I am currently looking for new and exciting 
+                    <span class="text__highlight">challenges </span>
+                    in the field of Software Development, that will allow me the freedom 
+                    to work from wherever I am while also 
+                    <span class="text__highlight">serving my community. </span>
+                </p>
+                <div class="modal__languages">
+                    <figure class="language__img--wrapper">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                alt="Html Logo" class="language__img">
+                    <span class="language__name">HTML</span>
+                  </figure>
+                    <figure class="language__img--wrapper">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="CSS Logo"
+                class="language__img">
+                    <span class="language__name">CSS</span>
+                  </figure>
+                    <figure class="language__img--wrapper">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="JavaScript Logo"
+                class="language__img">
+                    <span class="language__name">JavaScript</span>
+                   </figure>
+                    <figure class="language__img--wrapper">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="React Logo"
+                class="language__img">
+                   <span class="language__name">React</span> 
+                  </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title"> Lets have a chat</h3>
+                <h4 class="modal__sub-title">I am actively seeking new opportunities</h4>
+                <form id="contact__form" onsubmit="contact(event)">
+                <div class="form__item">
+                    <label for="name" class="form__item--label">Name</label>
+                    <input class="input" name="user_name" type="text" required></input>
+                </div>
+                <div class="form__item">
+                    <label for="email" class="form__item--label">email</label>
+                    <input class="input" name="user_email" type="email" required></input>
+                </div>
+                <div class="form__item">
+                    <label for="message" class="form__item--label">Message</label>
+                    <textarea class="input" name="message" type="text" required></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">
+                    Send It My Way
+                </button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! I look forward to speaking with you soon!
+                </div>
+            </div>
+         </div>
+         <!-- squiggly bits -->
+          <img src="./assets/semi circle.svg" class="shape shape--0">
+          <img src="./assets/circle.svg" class="shape shape--1">
+          <img src="./assets/squiggly.svg" class="shape shape--2">
+          <img src="./assets/triangle.svg" class="shape shape--3">
+          <img src="./assets/semi circle.svg" class="shape shape--4">
+          <img src="./assets/circle.svg" class="shape shape--5">
+          <img src="./assets/squiggly.svg" class="shape shape--6">
+          <img src="./assets/triangle.svg" class="shape shape--7">
+          <img src="./assets/semi circle.svg" class="shape shape--8">
+          <!-- <img src="./assets/circle.svg" class="shape shape--9">
+          <img src="./assets/squiggly.svg" class="shape shape--10">
+          <img src="./assets/triangle.svg" class="shape shape--11"> -->
+        </section>
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">
+            Here are some of my <span class="text__highlight">projects</span>
+          </h1>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img src="./assets/TREACT.png" class="project__img" alt="" />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">T react</h3>
+                  <h4 class="project__description--sub-title">HTML CSS</h4>
+                  <p class="project__description--para">
+                    A very basic single page website concept for "T react" a company that does website templates.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://github.com/shannonh1307/https---github.com-shannonh1307-Treact.git"
+                      target="_blank"
+                      class="project__description--link"  >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                      href="https://shannonh1307.github.io/https---github.com-shannonh1307-Treact/"
+                      target="_blank"
+                      class="project__description--link" >
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__wrapper">
+                <img src="./assets/dashboard.png" class="project__img" alt="" />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Project Title / Name
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    HTML CSS Javascript Vue etc
+                  </h4>
+                  <p class="project__description--para">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Est consectetur magni vitae ipsum explicabo maxime.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href=""
+                      target="_blank"
+                      class="project__description--link"  >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                      href=""
+                      target="_blank"
+                      class="project__description--link"  >
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__wrapper">
+                <img src="./assets/undraw_proud-designer.svg" class="project__img" alt="" />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Project Title / Name
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    HTML CSS Javascript Vue etc
+                  </h4>
+                  <p class="project__description--para">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Est consectetur magni vitae ipsum explicabo maxime.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href=""
+                      target="_blank"
+                      class="project__description--link"  >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                      href=""
+                      target="_blank"
+                      class="project__description--link" >
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row__footer">
+          <figure class="footer__logo--wrapper">
+            <img class="footer__logo" src="./assets/SH logo purple.png" alt="SH" />
+          </figure>
+          <div class="footer__links">
+            <a
+              href="https://www.linkedin.com/in/shannon-houchins-7a006399/"
+              target="_blank"
+              class="footer__link 
+              link__hover-effect
+              link__hover-effect--white" >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/shannonh1307"
+              target="_blank"
+              class="footer__link 
+              link__hover-effect
+              link__hover-effect--white" >
+              GitHub
+            </a>
+            <a
+              href="./assets/resume IT w volunteer.pdf"
+              target="_blank"
+              class="footer__link 
+              link__hover-effect
+              link__hover-effect--white" >
+              Resume
+            </a>
+            <a href="#" 
+            class="footer__link 
+            link__hover-effect
+            link__hover-effect--white"
+            onclick="toggleModal()"> 
+            Contact </a>
+          </div>
+          <div class="footer__copyright">
+            Copyright &copy; 2025 Shannon Houchins
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
